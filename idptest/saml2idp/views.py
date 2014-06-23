@@ -83,6 +83,7 @@ def login_init(request, resource, **kwargs):
     return _generate_response(request, proc)
 
 @login_required
+@csrf_response_exempt
 def login_process(request):
     """
     Processor-based login continuation.
