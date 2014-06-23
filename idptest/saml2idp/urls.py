@@ -1,6 +1,11 @@
-from django.conf.urls.defaults import *
 from views import descriptor, login_begin, login_init, login_process, logout
 from metadata import get_deeplink_resources
+
+try:
+    # Django <1.6
+    from django.conf.urls.defaults import *
+except ImportError:
+    from django.conf.urls import *
 
 def deeplink_url_patterns(
     prefix='',

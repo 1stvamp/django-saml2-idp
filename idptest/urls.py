@@ -1,8 +1,12 @@
-from django.conf.urls.defaults import *
-
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
 admin.autodiscover()
+
+try:
+    # Django <1.6
+    from django.conf.urls.defaults import *
+except ImportError:
+    from django.conf.urls import *
 
 urlpatterns = patterns('',
     # Example:
