@@ -19,8 +19,10 @@ import xml_signing
 
 try:
     # Django <1.6
-    from django.views.decorators.csrf import (csrf_view_exempt as csrf_exempt,
-                                             csrf_response_exempt)
+    from django.views.decorators.csrf import (
+        csrf_view_exempt as csrf_exempt,
+        csrf_response_exempt
+    )
 except ImportError:
     from django.views.decorators.csrf import csrf_exempt
 
